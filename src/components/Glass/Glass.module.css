@@ -8,4 +8,11 @@
   filter: url(#displacementFilter);
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  user-select: none;
 }

@@ -6,7 +6,7 @@ export default function Glass() {
   const [isDragging, setIsDragging] = useState(false);
   const [mousePosition, setMousePosition] = useState({
     x: window.innerWidth / 2,
-    y: 300,
+    y: 280,
   });
 
   useEffect(() => {
@@ -51,7 +51,9 @@ export default function Glass() {
           left: mousePosition.x - 50 + "px",
           top: mousePosition.y - 50 + "px",
         }}
-      ></div>
+      >
+        <span>Drag Me!</span>
+      </div>
     </>
   );
 }
