@@ -1,15 +1,14 @@
-import { useState } from "react";
-import "./App.css";
-import Header from "./components/Header/Header";
-import Glass from "./components/Glass/Glass";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import GlassUI from "./pages/GlassUI";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Glass />
-      <Header />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/glassui" element={<GlassUI />} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

@@ -25,24 +25,6 @@ export default function Glass() {
 
   return (
     <>
-      {/* <svg style={{ position: "absolute", width: 0, height: 0 }}>
-        <filter id="displacementFilter">
-          <feTurbulence
-            type="turbulence"
-            baseFrequency="0.02"
-            numOctaves="3"
-            result="turbulence"
-          />
-          <feDisplacementMap
-            in2="turbulence"
-            in="SourceGraphic"
-            scale="10"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          />
-        </filter>
-      </svg> */}
-
       <div
         className={styles.glass}
         onPointerDown={() => setIsDragging(true)}
@@ -52,7 +34,10 @@ export default function Glass() {
           top: mousePosition.y - 50 + "px",
         }}
       >
-        <span>Drag Me!</span>
+        {/* Overlay text */}
+        <div className={styles.overlay}>
+          <span>Drag Me!</span>
+        </div>
       </div>
     </>
   );

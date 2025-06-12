@@ -1,0 +1,78 @@
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+/* The grid background layer */
+.bgGrid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  --size: 45px;
+  --line: color-mix(in hsl, #000, transparent 85%);
+  /* Grid background */
+  background:
+      /* Vertical lines: 1px wide, then transparent, repeating every --size */ linear-gradient(
+        90deg,
+        var(--line) 1px,
+        transparent 1px var(--size)
+      )
+      calc(var(--size) * 0.36) 50% / var(--size) var(--size),
+    /* Horizontal lines: 1px high, then transparent, repeating every --size */
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0%
+      calc(var(--size) * 0.32) / var(--size) var(--size);
+}
+
+/* The fade overlay for the grid */
+.bgGrid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Fade from transparent (top) to white (bottom) at 60% */
+  background: linear-gradient(to bottom, transparent 1%, white 50%);
+  z-index: 1;
+}
+
+/* Your content stays above the grid+fade */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.container h1 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+}
+.glassUi {
+  background-image: url("https://images.unsplash.com/photo-1546064125-11154220541f?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  width: 500px;
+  height: 250px;
+  border-radius: 28px;
+  border: solid 3px rgba(239, 253, 254, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
